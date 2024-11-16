@@ -21,7 +21,7 @@
 <script setup lang="ts">
 import BaseButton from "../BaseButton.vue";
 
-const props = defineProps<{
+defineProps<{
   title?: string;
 }>();
 

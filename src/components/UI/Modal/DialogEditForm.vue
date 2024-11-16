@@ -29,10 +29,10 @@ import BaseButton from "@/components/UI/BaseButton.vue";
 import TextField from "@/components/UI/Form/TextField.vue";
 
 interface Employee {
-  id: number;
-  name: string;
-  lastname: string;
-  department: string;
+  id?: number;
+  name?: string;
+  lastname?: string;
+  department?: string;
 }
 
 const props = defineProps<{

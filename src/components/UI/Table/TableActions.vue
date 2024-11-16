@@ -19,8 +19,10 @@ import SpriteIcon from "@/components/UI/SpriteIcon.vue";
 
 interface Doctor {
   id: number;
+  lastname: string;
   name: string;
   department: string;
+  head?: string;
 }
 
 const props = defineProps<{
