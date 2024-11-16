@@ -18,8 +18,8 @@
       <TableDefault
         :data="tableData"
         :table-name="`&quot;${title}&quot;`"
-        @edit="(person) => openEditModal(person)"
-        @delete="(person) => onDelete(person)"
+        @edit="openEditModal"
+        @delete="onDelete"
       />
 
       <DialogModal
@@ -30,10 +30,7 @@
         <template #content>
           <DialogEditForm
             :employee="employee"
-            @update:employee="
-              (person) =>
-                updateEmployee(person, tableData, closeModal, localStorageKey)
-            "
+            @update:employee="updateEmployeeData"
             @close="closeModal"
           />
         </template>
@@ -46,10 +43,7 @@
       >
         <template #content>
           <DialogEditForm
-            @update:employee="
-              (person) =>
-                createEmployee(person, tableData, closeModal, localStorageKey)
-            "
+            @update:employee="createEmployeeData"
             @close="isCreateDialogShown = false"
           />
         </template>
@@ -127,6 +121,14 @@ const onConfirm = (person: Employee) => {
       props.localStorageKey || ""
     );
   } else return;
+};
+
+const updateEmployeeData = (person: Employee) => {
+  updateEmployee(person, props.tableData, closeModal, props.localStorageKey);
+};
+
+const createEmployeeData = (person: Employee) => {
+  createEmployee(person, props.tableData, closeModal, props.localStorageKey);
 };
 </script>
 

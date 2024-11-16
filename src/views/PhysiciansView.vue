@@ -10,8 +10,8 @@
 
 <script setup lang="ts">
 import { onMounted, ref } from "vue";
-import { useEmployee } from "@/composables/useEmployee";
-import DoctorsService from "@/services/doctors";
+import { useEmployee } from "@/composables/useEmployee.js";
+import DoctorsService from "@/services/doctors.js";
 import PageLayout from "@/layouts/PageLayout.vue";
 
 interface Employee {
