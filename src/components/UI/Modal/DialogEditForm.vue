@@ -25,15 +25,9 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
+import { Employee } from "@/types";
 import BaseButton from "@/components/UI/BaseButton.vue";
 import TextField from "@/components/UI/Form/TextField.vue";
-
-interface Employee {
-  id?: number;
-  name?: string;
-  lastname?: string;
-  department?: string;
-}
 
 const props = defineProps<{
   employee?: Employee;

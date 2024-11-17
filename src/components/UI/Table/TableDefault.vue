@@ -37,33 +37,28 @@
 
 <script setup lang="ts">
 import { useRouter } from "vue-router";
+import { Employee } from "@/types";
 import TableDefaultRow from "@/components/UI/Table/TableDefaultRow.vue";
 
-interface Doctor {
-  id: number;
-  lastname: string;
-  name: string;
-  department: string;
-  head: string;
-}
-
 const props = defineProps<{
-  data: Doctor[];
+  data: Employee[] | undefined;
   tableName: string;
+  onEdit?: (person: Employee) => void;
+  onDelete?: (person: Employee) => void;
 }>();
 
 const emit = defineEmits<{
-  (event: "edit", person: Doctor): void;
-  (event: "delete", person: Doctor): void;
+  (event: "edit", person: Employee): void;
+  (event: "delete", person: Employee): void;
 }>();
 
 const router = useRouter();
 
-const handleEdit = (person: Doctor) => {
+const handleEdit = (person: Employee) => {
   emit("edit", person);
 };
 
-const handleDelete = (person: Doctor) => {
+const handleDelete = (person: Employee) => {
   emit("delete", person);
 };
 

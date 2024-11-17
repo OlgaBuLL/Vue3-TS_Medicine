@@ -11,6 +11,7 @@
 <script setup lang="ts">
 import { ref, onMounted } from "vue";
 import { useEmployee } from "@/composables/useEmployee";
+import { Employee } from "@/types";
 import DoctorsService from "@/services/doctors";
 import PageLayout from "@/layouts/PageLayout.vue";
 
@@ -47,16 +48,17 @@ import PageLayout from "@/layouts/PageLayout.vue";
 //   },
 // ]);
 
-interface Employee {
-  id: number;
-  name: string;
-}
+// interface Employee {
+//   id: number;
+//   name: string;
+// }
 
 interface TableData {
   id: number;
   name: string;
   lastname: string;
   department: string;
+  // head?: string;
 }
 
 const { saveToLocalStorage, loadFromLocalStorage } = useEmployee();
@@ -79,9 +81,9 @@ const getEmployee = async () => {
   const emoloyees: Employee[] = await DoctorsService.all();
 
   tableData.value = emoloyees.slice(5, 9).map((emp) => {
-    const { id, name } = emp;
+    const { id = 0, name = "" } = emp;
 
-    const employeeName = name.split(" ");
+    const employeeName = name?.split(" ");
     const department = id % 2 === 0 ? "хирургическое" : "кардиологическое";
 
     return {

@@ -64,6 +64,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import { useEmployee } from "@/composables/useEmployee.js";
+import { Employee } from "@/types";
 import PageTitle from "@/components/PageTitle.vue";
 import TableDefault from "@/components/UI/Table/TableDefault.vue";
 import DialogModal from "@/components/UI/Modal/DialogModal.vue";
@@ -71,13 +72,6 @@ import DialogEditForm from "@/components/UI/Modal/DialogEditForm.vue";
 import DialogConfirm from "@/components/UI/Modal/DialogConfirm.vue";
 import BaseButton from "@/components/UI/BaseButton.vue";
 import Loader from "@/components/UI/Loader.vue";
-
-interface Employee {
-  id: number;
-  name: string;
-  lastname: string;
-  department: string;
-}
 
 const props = defineProps<{
   title?: string;
@@ -92,7 +86,7 @@ const isEditDialogShown = ref(false);
 const isCreateDialogShown = ref(false);
 const isConfirmDialogShown = ref(false);
 const isConfirmed = ref(false);
-const employee = ref<Employee | null>(null);
+const employee = ref<Employee>();
 
 const openEditModal = (person: Employee) => {
   isEditDialogShown.value = !isEditDialogShown.value;

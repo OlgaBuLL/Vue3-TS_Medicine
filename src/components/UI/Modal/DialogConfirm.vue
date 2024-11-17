@@ -19,14 +19,9 @@
 </template>
 
 <script setup lang="ts">
+import { Employee } from "@/types";
 import DialogModal from "./DialogModal.vue";
 import BaseButton from "../BaseButton.vue";
-
-interface Employee {
-  id: number;
-  name: string;
-  lastname: string;
-}
 
 defineProps({
   title: {

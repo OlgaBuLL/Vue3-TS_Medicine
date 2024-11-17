@@ -15,23 +15,16 @@
 </template>
 
 <script setup lang="ts">
+import { Employee } from "@/types";
 import SpriteIcon from "@/components/UI/SpriteIcon.vue";
 
-interface Doctor {
-  id: number;
-  lastname: string;
-  name: string;
-  department: string;
-  head?: string;
-}
-
 const props = defineProps<{
-  doctor: Doctor;
+  doctor: Employee;
 }>();
 
 const emit = defineEmits<{
-  (e: "edit", doctor: Doctor): void;
-  (e: "delete", doctor: Doctor): void;
+  (e: "edit", doctor: Employee): void;
+  (e: "delete", doctor: Employee): void;
 }>();
 
 const onEdit = () => {

@@ -16,11 +16,13 @@
     "allowImportingTsExtensions": true,
     "allowSyntheticDefaultImports": true,
     "isolatedModules": true,
-    "verbatimModuleSyntax": true,
+    // "verbatimModuleSyntax": true, // для строгих типов import type
     "moduleDetection": "force",
     "noEmit": true,
     "jsx": "preserve",
-    "jsxImportSource": "vue",
+    "allowJs": true,
+    "checkJs": false,
+    // "jsxImportSource": "vue",
 
     /* Linting */
     "strict": true,

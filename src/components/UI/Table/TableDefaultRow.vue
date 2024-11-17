@@ -1,5 +1,5 @@
 <template>
-  <tr class="table-row" @click="emit('redirect', doctor.id)">
+  <tr class="table-row" @click="onRedirect">
     <td class="">{{ index + 1 }}</td>
     <td class="">{{ doctor.lastname }}</td>
     <td class="">{{ doctor.name }}</td>
@@ -12,34 +12,35 @@
 </template>
 
 <script setup lang="ts">
+import { Employee } from "@/types";
 import TableActions from "./TableActions.vue";
 
-interface Doctor {
-  id: number;
-  lastname: string;
-  name: string;
-  department: string;
-  head?: string;
-}
-
 const emit = defineEmits<{
-  (event: "edit", person: Doctor): void;
-  (event: "delete", person: Doctor): void;
+  (event: "edit", person: Employee): void;
+  (event: "delete", person: Employee): void;
   (event: "redirect", id: number): void;
 }>();
 
 const props = defineProps<{
-  doctor: Doctor;
+  doctor: Employee;
   index: number;
   tableName?: string;
 }>();
 
-const onEdit = (person: Doctor) => {
+const onEdit = (person: Employee) => {
   emit("edit", person);
 };
 
-const onDelete = (person: Doctor) => {
+const onDelete = (person: Employee) => {
   emit("delete", person);
+};
+
+const onRedirect = () => {
+  const doctorId = props.doctor.id;
+
+  if (doctorId !== undefined) {
+    emit("redirect", doctorId);
+  }
 };
 </script>
 
