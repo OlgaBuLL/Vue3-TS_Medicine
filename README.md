@@ -34,10 +34,11 @@
 
 ## Stack:
 
-Stack:
 💉 Vue 3 Composition API    
 💉 Vue Router    
-💉 API  
+💉 TypeScript    
+💉 API   
+💉 Vite    
 💉 SVG-sprite    
 💉 SCSS    
 💉 BEM-methodology    
@@ -45,7 +46,7 @@ Stack:
 💉 Grid    
 💉 Flex    
 💉 semantic and adaptive layout    
-💉 Vite    
+
 
 <br>
 
@@ -78,35 +79,12 @@ In the project directory, you can run:
       </a><br>E-mail
      </td>
     <td align="center" width="82">
-      <a href="https://www.linkedin.com/in/olga-bulgakova-014254243/">
+      <a href="https://www.linkedin.com/in/bulgakova-olga/">
        <img src='https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/linkedin.svg' alt='linkedin' width="50" />
       </a><br>LinkedIn
      </td>
   </tr>
 </table>
-
-
-## Install the dependencies
-```bash
-yarn
-# or
-npm install
-```
-
-### Start the app in development mode (hot-code reloading, error reporting, etc.)
-```bash
-quasar dev
-```
-
-
-### Build the app for production
-```bash
-quasar build
-```
-
-### Customize the configuration
-See [Configuring quasar.config.js](https://v2.quasar.dev/quasar-cli-vite/quasar-config-js).
-
 
 # Vue 3 + TypeScript + Vite
 
