@@ -27,7 +27,7 @@
 
 
 [![doctors](https://github.com/user-attachments/assets/38c7a21c-2c32-44ad-b285-fe4216022c00)](https://olga-bull-medical-website-demo.netlify.app)
-[![nurses](https://github.com/user-attachments/assets/6617cf08-ab7a-4cd8-b0ff-c06fcb0945bf)](https://olga-bull-medical-website-demo/nurses.netlify.app)
+[![nurses](https://github.com/user-attachments/assets/6617cf08-ab7a-4cd8-b0ff-c06fcb0945bf)](https://olga-bull-medical-website-demo.netlify.app/nurses)
 
 
 <br>
